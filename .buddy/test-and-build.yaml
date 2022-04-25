@@ -11,12 +11,6 @@
       docker_image_name: 'library/node'
       docker_image_tag: '12.18.3'
       execute_commands:
-        - 'export CONNECTOR_API_KEY=apikey'
-        - 'export NODE_ENV=test'
-        - 'export LAUNCH_DARKLY_SDK_KEY='
-        - 'export TEAM_NAME=test'
-        - 'cp .npmrc.example .npmrc'
-        - 'echo -ne "\n//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc'
         - 'npm install'
         - 'npm run lint'
         - 'npm run format:check'
@@ -27,11 +21,4 @@
         - '/:/buddy/sonar'
       trigger_condition: 'ALWAYS'
       shell: 'BASH'
-    - action: 'Build Docker image'
-      type: 'DOCKERFILE'
-      region: 'ap-southeast-1'
-      dockerfile_path: 'Dockerfile'
-      build_args:
-        - 'NPM_TOKEN=$NPM_TOKEN'
-      trigger_condition: 'ALWAYS'
-      integration_hash: '5e85761fc5f225000f97dd99'
+
