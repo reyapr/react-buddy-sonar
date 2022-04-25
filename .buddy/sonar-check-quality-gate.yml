@@ -11,11 +11,11 @@
       docker_image_name: 'library/node'
       docker_image_tag: '12'
       execute_commands:
-      - 'npm install'
-      - 'npm test -- --coverage'
-      - 'npm i -g sonarqube-scanner'
-      - 'sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
-      - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
+        - 'npm install'
+        - 'npm test -- --coverage'
+        - 'npm i -g sonarqube-scanner'
+        - 'sonar-scanner -Dsonar.login=${SONAR_TOKEN}'
+        - 'bash .buddy/scripts/sonar/check-quality-gate.sh'
       trigger_condition: 'ALWAYS'
       shell: 'BASH'
       volume_mappings:
