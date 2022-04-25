@@ -2,7 +2,9 @@
   trigger_mode: 'ON_EVERY_PUSH'
   ref_name: 'refs/heads/*'
   ref_type: 'WILDCARD'
-  trigger_condition: 'ALWAYS'
+- trigger_condition: "SUCCESS_PIPELINE"
+  trigger_project_name: "react-buddy-sonar"
+  trigger_pipeline_name: "Build and test on every PR"
   auto_clear_cache: true
   actions:
     - action: 'Execute: sonar-scanner & check quality gate'
