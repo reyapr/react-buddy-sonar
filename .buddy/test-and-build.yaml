@@ -5,7 +5,7 @@
   trigger_condition: 'ALWAYS'
   auto_clear_cache: true
   actions:
-    - action: 'Execute: npm run lint, npm test, npm run build'
+    - action: 'Execute: npm test'
       type: 'BUILD'
       working_directory: '/buddy/sonar'
       docker_image_name: 'library/node'
