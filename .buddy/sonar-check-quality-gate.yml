@@ -2,7 +2,7 @@
   trigger_mode: 'ON_EVERY_PUSH'
   ref_name: 'refs/heads/*'
   ref_type: 'WILDCARD'
-  trigger_conditions: 'ALWAYS'
+  trigger_condition: 'ALWAYS'
   auto_clear_cache: true
   actions:
     - action: 'Execute: sonar-scanner & check quality gate'
