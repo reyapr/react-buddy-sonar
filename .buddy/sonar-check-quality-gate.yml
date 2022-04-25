@@ -17,5 +17,5 @@
       trigger_condition: 'ALWAYS'
       shell: 'BASH'
       volume_mappings:
-        - '/:/buddy/sonar'
+        - '/:/buddy/sonar' 
     
