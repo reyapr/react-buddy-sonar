@@ -11,6 +11,7 @@
       docker_image_name: 'library/node'
       docker_image_tag: '12.18.3'
       execute_commands:
+        - jq
         - 'npm install'
         - 'npm test'
       volume_mappings:
